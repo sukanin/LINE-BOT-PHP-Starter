@@ -32,6 +32,13 @@ if (!is_null($events['events'])) {
 				];
 			}
 
+			if (strcmp($text,'get content') == 0) {
+				$messages = [
+					'type' => 'text',
+					'text' => $content
+				];
+			}
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
