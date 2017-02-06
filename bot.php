@@ -19,11 +19,18 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $user_id
+				'text' => $text
 			];
+
+			// Build message to reply back
+			if (strcmp($text,'get userid'))
+				$messages = [
+					'type' => 'text',
+					'text' => $user_id
+				];
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
