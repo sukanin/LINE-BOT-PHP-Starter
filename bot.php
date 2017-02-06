@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			];
 
 			// Build message to reply back
-			if (strcmp($text,'get userid'))
+			if (strcmp($text,'get userid') == 0) {
 				$messages = [
 					'type' => 'text',
 					'text' => $user_id
@@ -54,4 +54,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "OK2";
